@@ -41,15 +41,23 @@ model evaluation
 ### Experimental Setup
 The study employs three methods (supervised fine-tuning, preference tuning and retrieval augmented generation) based on three different LLMs (Llama3-8b, Falcon-7b and GPT) to train models to simulate a single patient’s response during the psychotherapy based on given transcripts. Automated evaluations are then used to compare within each method, and finally, human evaluation is conducted for all models. This chapter introduces the preparation of the dataset, the LLMs and the three methods used in the study, and finally the evaluation methods.
 3.1	Environment
+
 Development Environment:
+
 	PyTorch Version: 2.1.0
+
 	Python Version: 3.10 (Ubuntu 22.04)
+
 	CUDA Version: 12.1
+
 	GPU: NVIDIA RTX 4090 (24GB) x 1
+
 	CPU: 12 vCPU Intel(R) Xeon(R) Platinum 8352V @ 2.10GHz
+
 
 3.2	Dataset
 The psychotherapy transcripts used in this study are sourced from the STEP (Staged Treatment in Early Psychosis) research project. Established in 2016, the STEP research involves psychotherapists and researchers working at five Headspace sites in Melbourne, as well as the Orygen Youth Health PACE (Personal Assessment and Crisis Evaluation) clinic. The STEP project is dedicated to early intervention for young people at risk of psychosis and is one of Orygen's largest research initiatives. For more details, please visit the website: https://www.orygen.org.au/Research/Current-studies/STEP-study.
+
 3.2.1	Preprocessing
 The data used in this article are derived from conversations between psychotherapist and one single patient, recorded in audio and transcribed into text format. Fig. 1 illustrates the format of the unprocessed raw data sample. (where S1 represents the therapist and S2 represents the patient).	
 
@@ -58,6 +66,7 @@ Fig. 1 Raw data sample.
 The text is transcribed from audio recordings, there are terms such as [inaudible], [redacted], and [crosstalk] present in the text. Table 1 illustrates the processing for these  
 terms. I use the BERT model (Devlin, Chang, Lee, & Toutanova, 2019) to predict the word for [MASK] in cases of [inaudible], [redacted], and [crosstalk]. Then, I remove words representing laughter and other actions, and directly replace uncertain words.
 
+![微信截图_20240722211350](https://github.com/user-attachments/assets/9d321e44-75f7-4dbb-9bb8-9b0b738a65ff)
 
 
 
