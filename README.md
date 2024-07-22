@@ -38,36 +38,26 @@ Index Terms – psychotherapy, chatbot, natural language processing, large langu
 supervised fine-tuning, preference tuning, retrieval-augmented generation, large language
 model evaluation
 
-### Experimental Setup
-The study employs three methods (supervised fine-tuning, preference tuning and retrieval augmented generation) based on three different LLMs (Llama3-8b, Falcon-7b and GPT) to train models to simulate a single patient’s response during the psychotherapy based on given transcripts. Automated evaluations are then used to compare within each method, and finally, human evaluation is conducted for all models. This chapter introduces the preparation of the dataset, the LLMs and the three methods used in the study, and finally the evaluation methods.
-3.1	Environment
-
-Development Environment:
-
-	PyTorch Version: 2.1.0
-
-	Python Version: 3.10 (Ubuntu 22.04)
-
-	CUDA Version: 12.1
-
-	GPU: NVIDIA RTX 4090 (24GB) x 1
-
-	CPU: 12 vCPU Intel(R) Xeon(R) Platinum 8352V @ 2.10GHz
-
-
-3.2	Dataset
-The psychotherapy transcripts used in this study are sourced from the STEP (Staged Treatment in Early Psychosis) research project. Established in 2016, the STEP research involves psychotherapists and researchers working at five Headspace sites in Melbourne, as well as the Orygen Youth Health PACE (Personal Assessment and Crisis Evaluation) clinic. The STEP project is dedicated to early intervention for young people at risk of psychosis and is one of Orygen's largest research initiatives. For more details, please visit the website: https://www.orygen.org.au/Research/Current-studies/STEP-study.
-
-3.2.1	Preprocessing
-The data used in this article are derived from conversations between psychotherapist and one single patient, recorded in audio and transcribed into text format. Fig. 1 illustrates the format of the unprocessed raw data sample. (where S1 represents the therapist and S2 represents the patient).	
-
- ![image](https://github.com/user-attachments/assets/eef3b9db-8500-4cab-a4d3-351954716a0f)
-Fig. 1 Raw data sample.
-The text is transcribed from audio recordings, there are terms such as [inaudible], [redacted], and [crosstalk] present in the text. Table 1 illustrates the processing for these  
-terms. I use the BERT model (Devlin, Chang, Lee, & Toutanova, 2019) to predict the word for [MASK] in cases of [inaudible], [redacted], and [crosstalk]. Then, I remove words representing laughter and other actions, and directly replace uncertain words.
-
-![微信截图_20240722211350](https://github.com/user-attachments/assets/9d321e44-75f7-4dbb-9bb8-9b0b738a65ff)
-
-
-
-
+![1](https://github.com/user-attachments/assets/39321e8c-1269-42c9-ba3b-54049d202b00)
+![2](https://github.com/user-attachments/assets/64e94975-5be1-4cde-911c-71ca90c680d0)
+![3](https://github.com/user-attachments/assets/18a0abbf-fd6c-4e1c-8865-157bf6ad39a5)
+![4](https://github.com/user-attachments/assets/4d467e0f-fbd6-4406-aa47-aeb2d9a9e44c)
+![5](https://github.com/user-attachments/assets/1ba994f6-a9d0-4b69-b48f-5f3b51280ec5)
+![6](https://github.com/user-attachments/assets/fc92a6f7-ce75-409f-9e0e-34518fd250dc)
+![7](https://github.com/user-attachments/assets/66ba7ed2-a2cf-413a-99f3-08f7455d08f7)
+![8](https://github.com/user-attachments/assets/e6717c94-b360-4381-994d-d8a55950b77d)
+![9](https://github.com/user-attachments/assets/7dfb6981-d279-4151-ae4c-9e2568780dde)
+![10](https://github.com/user-attachments/assets/f6a03d30-1837-4504-9d0a-60e7044f0c1f)
+![11](https://github.com/user-attachments/assets/6771807e-9968-41a1-bf46-33c35ab71cde)
+![12](https://github.com/user-attachments/assets/2cd53bb3-10bc-452b-aa4f-1f335005d693)
+![13](https://github.com/user-attachments/assets/05b31ae4-034c-4006-93b7-15fd2ce60d13)
+![14](https://github.com/user-attachments/assets/e630188e-bdec-4fdf-ae5c-9faa0b21da39)
+![15](https://github.com/user-attachments/assets/e39b8063-3e61-4d9f-931d-6b9167d20ffa)
+![16](https://github.com/user-attachments/assets/f7c36fb6-0959-40f2-8620-aa2e95874fc7)
+![17](https://github.com/user-attachments/assets/59b659be-8001-4050-9087-873e62cd0b48)
+![18](https://github.com/user-attachments/assets/cdca11ac-05bb-436a-a807-8266be1d9177)
+![19](https://github.com/user-attachments/assets/75bb9c2d-ddb8-4990-abf9-909a6e09696b)
+![20](https://github.com/user-attachments/assets/6b398e60-2259-4322-9a48-bf96bc86d7d1)
+![21](https://github.com/user-attachments/assets/67c06957-3dd5-4ef5-ae2a-3e935eee9e11)
+![22](https://github.com/user-attachments/assets/42f4cb96-3109-4fcf-ae30-2e9011bf2f93)
+![23](https://github.com/user-attachments/assets/a015d641-319e-4416-968b-6260e6b3a31e)
