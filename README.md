@@ -1,4 +1,3 @@
-![1](https://github.com/user-attachments/assets/d5ec3a3a-8ea3-4f04-9cdb-75508bf8bcfb)
 # Chatbot-For-Psychotherapy
 Use SFT, Preference Optimization (DPO, KTO, IPO) and RAG base on Llama3, Falcon and GPT to develop a chatbot simulate people with mental issues. Use SelfCheckGPT NLI and G-EVAL scores in LLM evaluation.
 
@@ -39,8 +38,7 @@ Index Terms – psychotherapy, chatbot, natural language processing, large langu
 supervised fine-tuning, preference tuning, retrieval-augmented generation, large language
 model evaluation
 
-
-![1](https://github.com/user-attachments/assets/8b8e1455-3b84-4ab5-b63e-de90ed1cff63)
+### Experimental Setup
 
 
 
